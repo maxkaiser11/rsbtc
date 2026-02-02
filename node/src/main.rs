@@ -1,7 +1,6 @@
 use anyhow::Result;
 use argh::FromArgs;
-use btclib::network::Message;
-use btclib::types::{Block, Blockchain};
+use btclib::types::Blockchain;
 use dashmap::DashMap;
 use static_init::dynamic;
 use std::path::Path;
@@ -72,5 +71,5 @@ async fn main() -> Result<()> {
         let (socket, _) = listener.accept().await?;
         tokio::spawn(handler::handle_connection(socket));
     }
-    Ok(())
+    // Ok(())
 }

@@ -1,3 +1,5 @@
+use std::usize;
+
 use serde::{Deserialize, Serialize};
 use uint::construct_uint;
 construct_uint! {
@@ -28,6 +30,9 @@ pub const DIFFICULTY_UPDATE_INTERVAL: u64 = 50;
 
 // maximum mempool transaction age in seconds
 pub const MAX_MEMPOOL_TRANSACTION_AGE: u64 = 600;
+
+// maximum amount of transactions allowed in a block
+pub const BLOCK_TRANSACTION_CAP: usize = 20;
 
 pub mod crypto;
 pub mod error;
